@@ -91,3 +91,49 @@ console.log(welcomeMessage('이주연', true))
 console.log(welcomeMessage('이주연', false))
 
 
+/* 
+  2. 배송비 계산
+
+  주문 금액과 배송 지역을 입력받아 배송비를 계산하는 함수를 작성합니다.
+
+  배송비 정책
+  - 주문 금액이 50,000원 이상 : 무료 배송
+  - 제주/도서 지역 : 추가 배송비 3,000원
+  - 배송지역 값 예시 : "서울", "부산", "제주", "도서"
+  - 일반 지역 : 기본 배송비 3,000원
+  - 주문 금액이 0원 이하인 경우 : 0 반환
+  - 배송지역이 빈 문자열인 경우 : 기본 배송비 적용
+*/
+
+const deliveryFee = function (orderMount, deliveryArea) {
+  /* 
+  1. 함수 생성
+  2. 함수 return, 함수가 반환해야할 것을 생각하기 => 배송비를 return
+  3. return값에 들어올 수 있는 조건 확인
+  4. 몇가지의 조건이 나올지 체크 => 3가지 조건(0, 3000, 6000)
+  5. 조건들 boolean 변수로 만들기
+  6. 배송비 값으로 들어올 수 있는 조건들 체크
+      > 주문금액 0 이하 -> 배송비 0
+      > 주문금액이 50000이상 > 배송비 0
+      > 제주/도서 > 배송비 > 6000원
+      > 그외 일반 > 배송비 3000원
+  */
+
+  const isInvalidAmount = orderMount <= 0;
+  const isFree = orderMount >= 50000;
+  const isIslandArea = deliveryArea === "제주" || deliveryArea === "도서"
+
+  return Number(
+    (isInvalidAmount && "0")
+    || (isFree && "0")
+    || (isIslandArea && "6000")
+    || "3000"
+  );
+};
+
+console.log(deliveryFee(0, "서울"))
+console.log(deliveryFee(2000, "서울"));
+console.log(deliveryFee(60000, "제주"))
+console.log(deliveryFee(20000, "제주"))
+console.log(deliveryFee(80000, "서울"))
+console.log(deliveryFee(20000, ""))
