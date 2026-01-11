@@ -56,15 +56,11 @@ console.log(notificationAgreeCheck)
 
 
 
-
-
 /* 
   =========================================================================================
   함수 작성 과제
   =========================================================================================
 */
-
-
 /*
   1. 환영 메시지 생성
 
@@ -73,23 +69,39 @@ console.log(notificationAgreeCheck)
   VIP 회원 : "🌟 VIP {이름}님, 특별한 혜택이 준비되어 있습니다!"
   일반 회원 : "안녕하세요, {이름}님! 즐거운 쇼핑 되세요."
 */
+// boolean 사용
 function welcomeMessage(name, isVip) {
-  /* const vipMember = "VIP" + " " + name + "님, 특별한 혜택이 준비되어 있습니다!";
+  const vipMember = "VIP" + " " + name + "님, 특별한 혜택이 준비되어 있습니다!";
   const generalMember = "안녕하세요, " + name + "님, 즐거운 쇼핑 되세요";
 
   return (isVip && vipMember) || generalMember;
- */
-  return (
-    (isVip && "VIP " + name + "님, 특별한 혜택이 준비되어 있습니다!") ||
-    "안녕하세요, " + name + "님! 즐거운 쇼핑 되세요."
-  );
-}
 
-// VIP 회원
+}
 console.log(welcomeMessage('이주연', true))
-// 일반회원
 console.log(welcomeMessage('이주연', false))
 
+// string비교 사용
+function greet(name, rating) {
+  return (
+    ("vip" === rating && "VIP" + " " + name + "님, 특별한 혜택이 준비되어 있습니다!")
+    || "안녕하세요, " + name + "님! 즐거운 쇼핑 되세요."
+  )
+}
+console.log(greet("이주연", "vip"));
+console.log(greet("이주연", "general"));
+
+/* function greet(name, rating) {
+
+  const vipMessage = "VIP" + name + "님, 특별한 혜택이 준비되어 있습니다!";
+  const generalMessage = "안녕하세요," + name + "님! 즐거운 쇼핑 되세요.";
+
+  return (
+    ("vip" === rating && vipMessage || "general" === rating && generalMessage)
+  );
+}
+console.log(greet("이주연", "vip"));
+console.log(greet("이주연", "general"));
+ */
 
 /* 
   2. 배송비 계산
@@ -137,3 +149,15 @@ console.log(deliveryFee(60000, "제주"))
 console.log(deliveryFee(20000, "제주"))
 console.log(deliveryFee(80000, "서울"))
 console.log(deliveryFee(20000, ""))
+
+
+
+
+/*
+  1. 환영 메시지 생성
+
+  회원 등급과 이름을 입력받아 맞춤형 환영 메시지를 출력하는 함수를 작성합니다.
+
+  VIP 회원 : "🌟 VIP {이름}님, 특별한 혜택이 준비되어 있습니다!"
+  일반 회원 : "안녕하세요, {이름}님! 즐거운 쇼핑 되세요."
+*/
