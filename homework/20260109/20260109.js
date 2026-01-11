@@ -81,14 +81,14 @@ console.log(welcomeMessage('이주연', true))
 console.log(welcomeMessage('이주연', false))
 
 // string비교 사용
-function greet(name, rating) {
+function greetMessage(name, rating) {
   return (
     ("vip" === rating && "VIP" + " " + name + "님, 특별한 혜택이 준비되어 있습니다!")
     || "안녕하세요, " + name + "님! 즐거운 쇼핑 되세요."
   )
 }
-console.log(greet("이주연", "vip"));
-console.log(greet("이주연", "general"));
+console.log(greetMessage("이주연", "vip"));
+console.log(greetMessage("이주연", "general"));
 
 /* function greet(name, rating) {
 
