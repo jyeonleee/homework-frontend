@@ -1,14 +1,119 @@
-.offsite-container {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: -14rem;
-  width: 14rem;
-  background-color: var(--menu-background-color);
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eef0f3;
 }
 
-.site-container {
-  padding-top: 3rem;
-  padding-left: 2.5rem;
-  max-width: 43rem;
+.gameRecommendBox {
+  padding: 14px 10px 11px;
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+
+.title {
+  display: inline-block;
+  border-radius: 20px;
+
+  &:hover {
+    background-color: #F5F5F5;
+  }
+  &:focus {
+    outline: 2px solid #2049df;
+    outline-offset: 2px;
+    border-radius: 20px;
+  }
+
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 36px;
+    letter-spacing: -0.01em;
+    color: #333333;
+    padding: 0 10px 0 40px;
+    background-image: url("../../images/icon-game.svg");
+    background-position: 10px center;
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+  }
+}
+
+.carousel_box {
+  margin: 14px 0 0;
+  padding: 3px 0;
+}
+
+.list {
+  display: flex;
+  gap: 16px;
+  padding: 0 14px;
+  
+  .media {
+    position: relative;
+    width: 160px;
+    border-radius: 12px;
+    overflow: visible; /* 위로 튀는건 허용 */
+
+    .clip {
+      overflow: hidden; /* 배경(카드)은 잘라서 박스 유지 */
+      border-radius: 12px;
+
+      img {
+        width: 160px;
+        display: block;
+      }
+    }
+  }
+
+  .character {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 172px;
+    transition: transform 0.3s ease;
+    transform-origin: center bottom; /* 커져도 아래쪽 기준으로 */
+  }
+
+  /* hover: scale은 커지되 위로만 주로 커지게 */
+  .game:hover .character {
+    transform: translateX(-50%) scale(1.08);
+  }
+}
+  
+  
+.txt_box {
+  margin: 8px 0 0;
+  
+  h3 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: #000000;
+  }
+  p {
+    margin: 2px 0 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: #000000;
+  }
+  span {
+    margin: 8px 0 0;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    color: rgba(0, 0, 0, 0.48);
+  }
+}
+
+.carouselControl {
+  margin: 11px 0 0;
 }

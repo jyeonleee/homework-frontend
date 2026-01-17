@@ -13,74 +13,91 @@
   </head>
 
   <body>
-    <section aria-labelledby="recommandGame">
-      <div>
-        <a href="#none" aria-label="추천 게임 더보기">
-          <h2 id="recommandGame">추천게임</h2>
-          <span><img src="" alt="" aria-hidden="true" /></span>
-        </a>
-      </div>
+    <section class="gameRecommendBox" aria-labelledby="recommandGame">
+      
+        <div>
+          <a class="title" href="#none" aria-label="추천 게임 더보기">
+            <h2 id="recommandGame">
+              <span>추천 게임</span>
+              <span><img src="./images/icon-right.svg" alt="" aria-hidden="true" /></span>
+            </h2>
+          </a>
+        </div>
 
-      <div>
-        <ul>
-          <li>
-            <a href="#none">
-              <figure>
-                <img src="" alt="" />
-              </figure>
-              <div>
-                <h3>크로노 오디세이</h3>
-                <p>멈춰 있던 시간이 흐른다</p>
-                <span>MMORPG</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="#none">
-              <figure>
-                <img src="" alt="" />
-              </figure>
-              <div>
-                <h3>아키에이지 워</h3>
-                <p>시대의 전설을 향해</p>
-                <span>MMORPG</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="#none">
-              <figure>
-                <img src="" alt="" />
-              </figure>
-              <div>
-                <h3>크로노 오디세이</h3>
-                <p>멈춰 있던 시간이 흐른다</p>
-                <span>MMORPG</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="#none">
-              <figure>
-                <img src="" alt="" />
-              </figure>
-              <div>
-                <h3>아키에이지 워</h3>
-                <p>시대의 전설을 향해</p>
-                <span>MMORPG</span>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
+        <div class="carousel_box">
+          <ul class="list">
+            <li>
+              <a class="game" href="#none">
+                <div class="media">
+                  <figure class="clip">
+                    <img class="characterBg" src="./images/characterBg01.jpg" alt="" />
+                  </figure>
+                  <img class="character" src="./images/character01.png" alt="" />
+                </div>
+                <div class="txt_box">
+                  <h3>크로노 오디세이</h3>
+                  <p>멈춰 있던 시간이 흐른다</p>
+                  <span>MMORPG</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="game" href="#none">
+                <div class="media">
+                  <figure class="clip">
+                    <img class="characterBg" src="./images/characterBg02.jpg" alt="" />
+                  </figure>
+                  <img class="character" src="./images/character02.png" alt="" />
+                </div>
+                <div class="txt_box">
+                  <h3>크로노 오디세이</h3>
+                  <p>멈춰 있던 시간이 흐른다</p>
+                  <span>MMORPG</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="game" href="#none">
+                <div class="media">
+                  <figure class="clip">
+                    <img class="characterBg" src="./images/characterBg03.jpg" alt="" />
+                  </figure>
+                  <img class="character" src="./images/character03.png" alt="" />
+                </div>
+                <div class="txt_box">
+                  <h3>크로노 오디세이</h3>
+                  <p>멈춰 있던 시간이 흐른다</p>
+                  <span>MMORPG</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="game" href="#none">
+                <div class="media">
+                  <figure class="clip">
+                    <img class="characterBg" src="./images/characterBg04.jpg" alt="" />
+                  </figure>
+                  <img class="character" src="./images/character04.png" alt="" />
+                </div>
+                <div class="txt_box">
+                  <h3>크로노 오디세이</h3>
+                  <p>멈춰 있던 시간이 흐른다</p>
+                  <span>MMORPG</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
 
-      <div aria-label="추천 게임 페이지 이동">
-        <button type="button" aria-label="이전 추천 게임 보기">이전</button>
-        <p aria-live="polite">
-          <span>1</span>/<span>3</span>
-        </p>
-        <button type="button" aria-label="다음 추천 게임 보기">다음</button>
-      </div>
+        <div class="carouselControl" aria-label="추천 게임 페이지 이동">
+          <button type="button" aria-label="이전 추천 게임 보기">이전</button>
+          <p aria-live="polite">
+            <span>1</span>/<span>3</span>
+          </p>
+          <button type="button" aria-label="다음 추천 게임 보기">다음</button>
+        </div>
+      
+      
     </section>
   </body>
 
