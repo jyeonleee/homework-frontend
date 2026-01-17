@@ -13,11 +13,11 @@
   </head>
 
   <body>
-    <section>
+    <section aria-labelledby="recommandGame">
       <div>
-        <a href="#none">
-          <h2>추천게임</h2>
-          <span><img src="" alt="" /></span>
+        <a href="#none" aria-label="추천 게임 더보기">
+          <h2 id="recommandGame">추천게임</h2>
+          <span><img src="" alt="" aria-hidden="true" /></span>
         </a>
       </div>
 
@@ -74,12 +74,12 @@
         </ul>
       </div>
 
-      <div>
-        <button>이전</button>
-        <p>
+      <div aria-label="추천 게임 페이지 이동">
+        <button type="button" aria-label="이전 추천 게임 보기">이전</button>
+        <p aria-live="polite">
           <span>1</span>/<span>3</span>
         </p>
-        <button>다음</button>
+        <button type="button" aria-label="다음 추천 게임 보기">다음</button>
       </div>
     </section>
   </body>
