@@ -20,9 +20,8 @@ body {
     background-color: #F5F5F5;
   }
   &:focus {
-    outline: 2px solid #2049df;
-    outline-offset: 2px;
-    border-radius: 20px;
+    outline: 1px solid #2049df;
+    outline-offset: 1px;
   }
 
   h2 {
@@ -56,10 +55,9 @@ body {
     position: relative;
     width: 160px;
     border-radius: 12px;
-    overflow: visible; /* 위로 튀는건 허용 */
 
     .clip {
-      overflow: hidden; /* 배경(카드)은 잘라서 박스 유지 */
+      overflow: hidden;
       border-radius: 12px;
 
       img {
@@ -67,22 +65,40 @@ body {
         display: block;
       }
     }
+
+    .character {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 160px;
+      height: 172px;
+      transition: transform 0.3s ease;
+      transform-origin: center bottom; /* 커져도 아래쪽 기준으로 */
+      border-radius: 12px;
+    }
   }
 
-  .character {
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 160px;
-    height: 172px;
-    transition: transform 0.3s ease;
-    transform-origin: center bottom; /* 커져도 아래쪽 기준으로 */
-  }
-
-  /* hover: scale은 커지되 위로만 주로 커지게 */
   .game:hover .character {
-    transform: translateX(-50%) scale(1.08);
+    transform: translateX(-50%) scale(1.05);
+  }
+
+  .game {
+    display: inline-block;
+    
+    &:hover {
+      .txt_box h3 {
+        opacity: 0.64;
+      }
+      .txt_box p {
+        opacity: 0.64;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: inset 0 0 0 1px #2049df;  
+    }
   }
 }
   
@@ -115,5 +131,44 @@ body {
 }
 
 .carouselControl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   margin: 11px 0 0;
+
+  .controlBtn {
+    border: none;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 50%;
+    background-image: url("../../images/icon-control.svg");
+    background-size: 8px 14px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: inset 0 0 0 1px #2049df;
+    }
+    &.prev {
+      transform: scaleX(-1);
+    }
+  }
+  .page {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: #000000;
+
+    &.total {
+    color: rgba(0, 0, 0, 0.48);
+    }
+  }
 }
