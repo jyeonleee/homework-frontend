@@ -39,56 +39,51 @@ body {
 
 .carousel_box {
   margin: 14px 0 0;
-  padding: 3px 0;
+  padding: 3px 14px;
 }
 
-.list {
-  display: flex;
-  gap: 16px;
-  padding: 0 14px;
-  
-  .media {
-    position: relative;
-    width: 160px;
+.media {
+  position: relative;
+  width: 160px;
+  border-radius: 12px;
+
+  .clip {
+    overflow: hidden;
     border-radius: 12px;
 
-    .clip {
-      overflow: hidden;
-      border-radius: 12px;
-
-      img {
-        width: 160px;
-        display: block;
-      }
-    }
-
-    .character {
-      position: absolute;
-      left: 50%;
-      bottom: 0;
-      transform: translateX(-50%);
+    img {
       width: 160px;
-      height: 172px;
-      transition: transform 0.3s ease;
-      transform-origin: center bottom; /* 커져도 아래쪽 기준으로 */
-      border-radius: 12px;
+      display: block;
     }
   }
 
-  .game:hover .character {
-    transform: translateX(-50%) scale(1.05);
+  .character {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 172px;
+    transition: transform 0.3s ease;
+    transform-origin: center bottom; /* 커져도 아래쪽 기준으로 */
+    border-radius: 12px;
   }
+}
 
-  .game {
-    display: inline-block;
-    
-    &:hover {
-      .txt_box h3 {
-        opacity: 0.64;
-      }
-      .txt_box p {
-        opacity: 0.64;
-      }
+.game:hover .character {
+  transform: translateX(-50%) scale(1.05);
+}
+
+.game {
+  position: relative;
+  display: inline-block;
+  
+  &:hover {
+    .txt_box h3 {
+      opacity: 0.64;
+    }
+    .txt_box p {
+      opacity: 0.64;
     }
   }
 }
@@ -147,7 +142,7 @@ body {
       transform: scaleX(-1);
     }
   }
-  .page {
+  .pages {
     font-weight: 400;
     font-size: 18px;
     line-height: 1;
@@ -165,4 +160,42 @@ a:focus-visible,
 button:focus-visible {
   outline: 1px solid #2049df;
   outline-offset: 1px;
+}
+
+
+.page {
+  display: none;
+}
+
+.page.is-active {
+  display: flex;
+  gap: 16px;
+}
+
+.hidden {
+  position: absolute; 
+  width: 160px;
+  height: 160px;
+  inset: 0;
+  border-radius: 12px;
+
+  &::before {
+    content: '';
+    position: absolute; 
+    width: 10px;
+    height: 180px;
+    background-color: #ffffff;
+    top: -10px;
+    left: -10px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute; 
+    width: 10px;
+    height: 160px;
+    background-color: #ffffff;
+    top: -10px;
+    right: -10px;
+  }
 }
