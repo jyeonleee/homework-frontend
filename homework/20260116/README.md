@@ -118,3 +118,4 @@ AI를 사용한것에 대한 후회감이 밀려왔다.
 # 과제 코드 리뷰
 # 회고 (깨달은 점, 아쉬운 점 등)
 # 노트정리
+https://www.notion.so/4-2eccd1e312ae809eade5dcae9f2ee30d
