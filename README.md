@@ -4,3 +4,4 @@
 
 - [2026.01.09 과제](./homework/20260109/README.md)
 - [2026.01.16 과제](./homework/20260116/README.md)
+- [2026.01.16 과제](./homework/20260124/README.md)
